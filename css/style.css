@@ -171,3 +171,12 @@ pre {
 a {
   text-decoration: none;
 }
+
+:root {
+  --bg-color: #081b29;
+  --bg-color-accent: #112e42;
+  --text-color: #ededed;
+  --color-accent: #00abf0;
+
+  --padding-block: 30px;
+}
