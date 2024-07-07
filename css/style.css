@@ -233,8 +233,24 @@ body {
   color: var(--color-accent);
 }
 
+.link {
+  color: var(--color-accent);
+}
+
 .main {
   padding-block: var(--padding-block);
+}
+
+h2.section-title {
+  margin-top: 20px;
+}
+
+
+.section-title {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
 }
 
 .main-container {
