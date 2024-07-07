@@ -2,7 +2,7 @@
 ## Junior Frontend Developer  
 ## Contacts  
 - **E-mail:** an.kozimirov@gmail.com
-- **Phone:** 89062185931
+- **Phone:** 8906******
 - **Telegram:** @ondreykka
 - **Discord:** jessepinkmanalbuquerque 
 ## Briefly About Myself:
