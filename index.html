@@ -102,6 +102,29 @@
           </li>
         </ul>
       </section>
+      <section class="section" id="code">
+        <h2 class="section-title">Code</h2>
+        <pre>
+          function drawButtons(btns) {
+            btns.forEach((btn) => {
+              const ctxBtn = btn.getContext("2d");
+          
+              btn.width = 40;
+              btn.height = 40;
+          
+              if (wrapperIdNonograms.classList.contains('dark')) {
+                ctxBtn.strokeStyle = "white";
+              } else {
+                ctxBtn.strokeStyle = "black";
+              }
+          
+              ctxBtn.lineWidth = 2;
+          
+              ctxBtn.strokeRect(0, 0, 40, 40);
+            });
+          }
+        </pre>
+      </section>
     </div>
   </main>
   <footer class="footer"></footer>
