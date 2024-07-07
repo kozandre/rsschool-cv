@@ -284,3 +284,14 @@ h2.section-title {
 .summary-text {
   padding-right: 10px;
 }
+
+.skills-list {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.skills-img {
+  width: 100px;
+  height: 30px;
+}
