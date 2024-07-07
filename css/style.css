@@ -242,6 +242,7 @@ body {
 }
 
 h2.section-title {
+  color: var(--color-accent);
   margin-top: 20px;
 }
 
@@ -278,4 +279,8 @@ h2.section-title {
 
 .profile-text {
   color: var(--color-accent);
+}
+
+.summary-text {
+  padding-right: 10px;
 }
