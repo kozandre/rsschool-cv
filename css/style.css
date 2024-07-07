@@ -1,0 +1,338 @@
+@font-face {
+  font-family: "Metal";
+  src: url("../fonts/Metal-Regular.woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+/**
+Нормализация блочной модели
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+*/
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+*/
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+*/
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl
+):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+*/
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+*/
+p {
+  --paragraphMarginBottom: 24px;
+
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+*/
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+
+/**
+  Упрощаем работу с изображениями
+*/
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+*/
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+  */
+  height: 100%;
+}
+
+/**
+  Плавный скролл
+*/
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+  */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+  */
+  line-height: 1.5;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+*/
+svg *[fill] { fill: currentColor }
+svg *[stroke] { stroke: currentColor }
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+*/
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+pre {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --bg-color: #081b29;
+  --bg-color-accent: #112e42;
+  --text-color: #ededed;
+  --color-accent: #00abf0;
+
+  --padding-block: 30px;
+}
+
+html {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Metal", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: 0;
+}
+
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding-block: var(--padding-block);
+  background-color: var(--bg-color-accent);
+  box-shadow: 10px 10px 40px 2px black;
+}
+
+.container {
+  max-width: 1440px;
+  padding-inline: 40px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  flex-wrap: wrap;
+
+  padding: 0 20px;
+
+  transition: 0.3s;
+}
+
+.nav-link {
+  color: var(--text-color);
+  transition: color 0.5s;
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.link {
+  color: var(--color-accent);
+}
+
+.main {
+  padding-block: var(--padding-block);
+  flex-grow: 1;
+}
+
+h2.section-title {
+  color: var(--color-accent);
+  margin-top: 20px;
+}
+
+
+.section-title {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section {
+  width: 50%;
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 8px 8px 20px 2px black;
+  margin-bottom: 20px;
+}
+
+.profile-text {
+  color: var(--color-accent);
+}
+
+.summary-text {
+  padding-right: 10px;
+}
+
+.skills-list {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.skills-img {
+  width: 100px;
+  height: 30px;
+}
+
+#code pre {
+  font-size: 16px;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+code {
+  display: block;
+  margin-left: -88px;
+  margin-top: -36px;
+}
+
+.footer {
+  background-color: var(--bg-color-accent);
+  box-shadow: -8px -8px 20px 2px black;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  padding-block: var(--padding-block);
+}
+
+.course-logo {
+  width: 200px;
+  height: 50px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    width: 100%;
+  }
+}
