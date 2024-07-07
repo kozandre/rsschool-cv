@@ -199,3 +199,36 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.header {
+  padding-block: var(--padding-block);
+  background-color: var(--bg-color-accent);
+  box-shadow: 10px 10px 40px 2px black;
+}
+
+.container {
+  max-width: 1330px;
+  padding-inline: 30px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  flex-wrap: wrap;
+
+  padding: 0 20px;
+
+  transition: 0.3s;
+}
+
+.nav-link {
+  color: var(--text-color);
+  transition: color 0.5s;
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
