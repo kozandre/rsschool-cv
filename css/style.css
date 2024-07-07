@@ -320,3 +320,9 @@ h2.section-title {
   width: 200px;
   height: 50px;
 }
+
+@media (max-width: 768px) {
+  .section {
+    width: 100%;
+  }
+}
