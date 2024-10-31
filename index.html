@@ -110,18 +110,14 @@
             function drawButtons(btns) {
               btns.forEach((btn) =&#62; {
                 const ctxBtn = btn.getContext("2d");
-            
                 btn.width = 40;
                 btn.height = 40;
-            
                 if (wrapperIdNonograms.classList.contains('dark')) {
                   ctxBtn.strokeStyle = "white";
                 } else {
                   ctxBtn.strokeStyle = "black";
                 }
-            
                 ctxBtn.lineWidth = 2;
-            
                 ctxBtn.strokeRect(0, 0, 40, 40);
               });
             }
